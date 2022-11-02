@@ -5,7 +5,6 @@ public class Main {
         int arr[] = {11, 22, 44, 50, 60, 86, 114, 140, 145, 190};
 
         System.out.println(getIndex(arr, 200));
-
     }
 
     public static int getIndex(int[] arr, int number){

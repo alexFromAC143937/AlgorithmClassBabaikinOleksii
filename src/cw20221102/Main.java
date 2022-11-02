@@ -5,31 +5,23 @@ public class Main {
         // int[] arr = {11, 22, 44, 50, 60, 86, 114, 140, 145, 190};
          int[] arr = {11, 22, 44};
 
-        System.out.println(getIndex(arr, 44));
+        System.out.println(getIndex(arr, 22));
     }
 
     public static int getIndex(int[] arr, int number){
         int i = 0;
         int j = arr.length - 1;
-        if (arr[j]<number) return -1;
-        while(i<j ){
-            if(j-i == 1){
-                if(arr[i]==number){
-                    return i;
-                } else if ((arr[j]==number)) {
-                    return i;
-                } else  return -3;
-            }
+
+        while(i<=j ){
             int k = i+(j-i)/2;
             if(arr[k]< number){
-                i = k;
+                i = k+1;
             }else if(arr[k] > number){
-                j = k;
+                j = k-1;
             }else{
                 return k;
             }
         }
-        if(i==j && arr[i] == number) return i;
         return -1;
     }
 }

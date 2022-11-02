@@ -2,9 +2,10 @@ package cw20221102;
 
 public class Main {
     public static void main(String[] args) {
-        int arr[] = {11, 22, 44, 50, 60, 86, 114, 140, 145, 190};
+        // int[] arr = {11, 22, 44, 50, 60, 86, 114, 140, 145, 190};
+         int[] arr = {11, 22, 44};
 
-        System.out.println(getIndex(arr, 140));
+        System.out.println(getIndex(arr, 44));
     }
 
     public static int getIndex(int[] arr, int number){
@@ -12,6 +13,13 @@ public class Main {
         int j = arr.length - 1;
         if (arr[j]<number) return -1;
         while(i<j ){
+            if(j-i == 1){
+                if(arr[i]==number){
+                    return i;
+                } else if ((arr[j]==number)) {
+                    return i;
+                } else  return -3;
+            }
             int k = i+(j-i)/2;
             if(arr[k]< number){
                 i = k;

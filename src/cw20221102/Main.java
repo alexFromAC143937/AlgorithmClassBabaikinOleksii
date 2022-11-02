@@ -4,12 +4,13 @@ public class Main {
     public static void main(String[] args) {
         int arr[] = {11, 22, 44, 50, 60, 86, 114, 140, 145, 190};
 
-        System.out.println(getIndex(arr, 200));
+        System.out.println(getIndex(arr, 140));
     }
 
     public static int getIndex(int[] arr, int number){
         int i = 0;
         int j = arr.length - 1;
+        if (arr[j]<number) return -1;
         while(i<j ){
             int k = i+(j-i)/2;
             if(arr[k]< number){
@@ -19,7 +20,6 @@ public class Main {
             }else{
                 return k;
             }
-
         }
         if(i==j && arr[i] == number) return i;
         return -1;
